@@ -14,14 +14,16 @@ def transform_and_upload(csv_filepath: str, bucket_name: str, parquet_filename: 
   raw = raw.rename(columns = {col : col.replace(".","_") for col in raw.columns})
   # Save the DataFrame as a Parquet file
   parquet_filepath = parquet_filename + '.parquet'
-  raw.to_parquet(f"{raw_data_path}/{parquet_filepath}")
+  full_file_path = f"{raw_data_path}/{parquet_filepath}"
+  
+  raw.to_parquet(full_file_path)
 
   # Upload the Parquet file to Google Cloud Storage
   storage_client = storage.Client(credentials=credentials)
   bigquery_client = bigquery.Client(credentials=credentials)
   bucket = storage_client.bucket(bucket_name)
   blob = bucket.blob(parquet_filename)
-  blob.upload_from_filename(parquet_filepath)
+  blob.upload_from_filename(full_file_path)
 
   # Load raw data from Challenge Bucket to BigQuery
   blob_uri = "gs://" + bucket_name + "/" + parquet_filename
