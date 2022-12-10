@@ -3,9 +3,9 @@ import os
 from pathlib import Path
 import glob
 
-cwd = Path.cwd()
-raw_data_path = mod_path = Path(__file__).parents[1] / "raw_data" 
-csv_files = glob.glob(f"{raw_data_path}/*.csv")
+
+raw_data_path = Path(__file__).parents[1] / "raw_data" 
+csv_files = glob.glob(f"{raw_data_path}/csv_data/*.csv")
 
 service_account_path =  "/home/jrtedeschi/.google/credentials/credentials.json"
 
