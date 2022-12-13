@@ -46,3 +46,9 @@ resource "google_bigquery_dataset" "raw_dataset" {
   project    = var.project
   location   = var.region
 }
+
+resource "google_bigquery_dataset" "staging_dataset" {
+  dataset_id = var.STAGING_BQ_DATASET
+  project    = var.project
+  location   = var.region
+}

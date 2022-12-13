@@ -29,7 +29,7 @@ def transform_and_upload(csv_filepath: str, bucket_name: str, parquet_filename: 
   blob_uri = "gs://" + bucket_name + "/" + parquet_filename
   print(blob_uri)
   job_config = bigquery.LoadJobConfig(source_format=bigquery.SourceFormat.PARQUET)
-  table_id = "dbtlab-371120.raw_belvo_challenge.raw_"+parquet_filename
+  table_id = "dbtlab-371120.raw_belvo_challenge."+parquet_filename
   bq_job = bigquery_client.load_table_from_uri(blob_uri, table_id, job_config = job_config)
   bq_job.result()
   destination_table = bigquery_client.get_table(table_id)

@@ -1,0 +1,67 @@
+version: 2
+sources:
+  - name: raw
+    schema: raw_belvo_challenge
+    database: dbtlab-371120
+
+    tables:
+      - name: contacts_deals_associations
+      - name: contacts
+      - name: companies
+      - name: companies_deals_associations
+      - name: deals
+      - name: owners
+      - name: customers
+      
+models:
+    - name: deals
+      description: "A staging view of the companies fact table."
+      columns:
+          - name: deal_id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+    - name: companies
+      description: "A staging view of the companies dimension table."
+      columns:
+          - name: company_id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+    - name: owners
+      description: "A staging view of the owner dimension table."
+      columns:
+          - name: owner_id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+
+    - name: contacts_deals_associations
+      description: "A staging view of the association of deals and contacts"
+      columns:
+          - name: contact_id
+            description: "The primary key for contacts table"
+            tests:
+                - unique
+                - not_null
+          - name: deal_id
+            description: "The primary key for deals table"
+            tests:
+                - unique
+                - not_null
+    - name: companies_deals_associations
+      description: "A staging view of the association of deals and companies"
+      columns:
+          - name: companies_id
+            description: "The primary key for companies table"
+            tests:
+                - unique
+                - not_null
+          - name: deal_id
+            description: "The primary key for deals table"
+            tests:
+                - unique
+                - not_null

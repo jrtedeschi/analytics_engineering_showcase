@@ -1,0 +1,14 @@
+belvo:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: oauth
+      project: dbtlab-371120
+      location: southamerica-east1
+    prod:
+      type: bigquery
+      method: oauth
+      project: dbtlab-371120
+      location: southamerica-east1
+

@@ -24,3 +24,8 @@ variable "RAW_BQ_DATASET" {
   type = string
   default = "raw_belvo_challenge"
 }
+
+variable "STAGING_BQ_DATASET" {
+  type = string
+  default = "staging_belvo_challenge"
+}
