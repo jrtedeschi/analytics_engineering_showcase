@@ -14,7 +14,7 @@ sources:
       - name: customers
       
 models:
-    - name: deals
+    - name: stg_deals
       description: "A staging view of the companies fact table."
       columns:
           - name: deal_id
@@ -22,7 +22,7 @@ models:
             tests:
                 - unique
                 - not_null
-    - name: companies
+    - name: stg_companies
       description: "A staging view of the companies dimension table."
       columns:
           - name: company_id
@@ -30,10 +30,18 @@ models:
             tests:
                 - unique
                 - not_null
-    - name: owners
+    - name: stg_owners
       description: "A staging view of the owner dimension table."
       columns:
           - name: owner_id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+    - name: stg_contacts
+      description: "A staging view of the contacts dimension table."
+      columns:
+          - name: contact_id
             description: "The primary key for this table"
             tests:
                 - unique
