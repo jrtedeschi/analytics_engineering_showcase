@@ -34,7 +34,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 João Rafael Tedeschi - joaorafaelbt@gmail.com
 
-Project Link: [https://github.com/jrtedeschi/AnalyticsEngineeringShowcase](https://github.com/jrtedeschi/AnalyticsEngineeringShowcase)
+Project Link: [Link](https://github.com/jrtedeschi/analytics_engineering_showcase/)
 
 Feel free to reach out if you have any questions or need further clarification. Enjoy exploring the project!
 
