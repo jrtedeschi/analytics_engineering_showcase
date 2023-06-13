@@ -3,7 +3,7 @@ name: 'belvo_challenge'
 version: '1.0.0'
 config-version: 2
 
-profile: 'belvo'
+profile: 'showcase'
 
 model-paths: ["models"]
 analysis-paths: ["analyses"]
@@ -21,7 +21,7 @@ models:
   belvo_challenge:
     staging:
       materialized: view
-      +schema : "staging_belvo_challenge"
+      +schema : "staging_showcase"
     reporting:
       +materialized: table
-      +schema: "belvo_challenge"
+      +schema: "showcase"
